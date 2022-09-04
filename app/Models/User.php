@@ -31,7 +31,6 @@ class User extends Authenticatable
     ];
 
     protected $casts = [
-        'username_verified_at' => 'datetime',
         'role' => \App\Enums\Role::class,
 
     ];

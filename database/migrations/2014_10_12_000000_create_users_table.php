@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('password');
             $table->string('phone')->default('0');
-            $table->timestamp('username_verified_at');
             $table->boolean('status')->default(true);
             $table->string('role')->default('user');
             $table->timestamps();
@@ -27,9 +26,6 @@ return new class extends Migration
     }
 
 
-    protected $casts = [
-        'role' => \App\Enums\Role::class,
-    ];
     /**
      * Reverse the migrations.
      *
