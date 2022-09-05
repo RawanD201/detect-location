@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
             'username' => 'a',
             'name' => 'a',
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'phone' => '07700332003'
+            'phone' => '07700332003',
+            'role' => 'admin'
         ]);
     }
 }
