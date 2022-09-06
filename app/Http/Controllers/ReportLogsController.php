@@ -30,6 +30,8 @@ class ReportLogsController extends Controller
             $durationInSeconds = 0;
             $row = [];
 
+            if (\count($user->logs) === 0)
+                return;
             foreach ($user->logs as $log) {
                 $logoutAt = $log->logout_at ? strtotime($log->logout_at)  : now()->timestamp;
                 $loginAt = strtotime($log->login_at);
