@@ -5,6 +5,7 @@ use App\Http\Controllers\UserLogsController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ReportLogsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::middleware(['auth', 'isUser'])->group(function () {
     Route::get('/dashboard', [IndexController::class, 'index'])->name('dashboard');
 
     Route::get('/logs', [UserLogsController::class, 'all'])->name('log');
+    Route::get('/reports', [ReportLogsController::class, 'all'])->name('report');
 
     Route::name('users.')->group(function () {
         Route::get('/users', [RegisteredUserController::class, 'all'])->name('index');

@@ -20,7 +20,15 @@ class UserLogsController extends Controller
         }
 
         $date = $request->date ?: now()->toDateString();
-        $logs = Log::with('user')->whereDate('created_at', '=', $date)->get();
+
+        $user = $request->user ?: null;
+        $logs = Log::with('user')
+            ->whereHas(
+                'user',
+                fn ($q) =>
+                $user ? $q->where('username', $user) : $q
+            )
+            ->whereDate('created_at', '=', $date)->get();
         return view('logs.index', compact('logs', 'date'));
     }
 }

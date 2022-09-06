@@ -33,7 +33,14 @@
                 @foreach($logs as $log)
                 <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
                     {{-- <td class="border-grey-light border hover:bg-gray-100 p-3 text-center"> {{$log->id}}</td> --}}
-                    <td class="border-grey-light border hover:bg-gray-100 p-3 text-center"> {{$log->user->username}}
+                    <td class="border-grey-light border hover:bg-gray-100 p-3 text-center">
+                        <div class="w-full">
+                            <a href="{{route('log',[
+                                'date'=>$date,
+                                 'user'=>$log->user->username
+                             ])}}">{{$log->user->username}}</a>
+                        </div>
+
                     </td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center"> {{$log->ip}}</td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center"> {{$log->country}}</td>
