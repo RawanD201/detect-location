@@ -20,9 +20,10 @@
     {{ $slot }}
     </div>
 
-    <div class=" bottom-0 flex items-center justify-center bg-[#F7F7F7]">
-        <span class="block font-medium text-sm text-gray-700 bg-[#F7F7F7] justify-center capitalize">all reversed for <a
-                href="https://www.facebook.com/APsoft.co" class="text-emerald-500">apsoft</a> 2022</span>
+    <div class=" bottom-0 flex items-center justify-center">
+        <span class="text-base text-center justify-center capitalize font-sans  text-gray-500">© 2022 <a
+                href="https://www.facebook.com/APsoft.co" class="text-[#1A3A7C] font-semibold">apsoft</a>, All Rigths
+            Recerved</span>
     </div>
 </body>
 

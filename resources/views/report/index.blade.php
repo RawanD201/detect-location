@@ -3,7 +3,7 @@
 
 <body class="flex items-center justify-center ">
 
-    <form class="flex items-center px-4 pt-2 gap-2 dir" action="{{route('log')}}">
+    <form class="flex items-center px-4 pt-2 gap-2 dir" action="{{route('report')}}">
         <input class="rounded  border-teal-500  w-1/2 lg:w-1/6 text-center" type="date" value="{{$date}}" name="date" />
         <button class="rounded bg-teal-400 p-[9px]"><i class="fa-solid fa-magnifying-glass text-white"></i></button>
     </form>
@@ -27,10 +27,10 @@
                     </td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center dir1"> {{$row['durations']}}
                     </td>
-                    <td class="border-grey-light border hover:bg-gray-100 p-3 text-center"><a href="{{route('log',[
-                        'date'=>$date,
-                         'user'=>$row['username']
-                     ])}}">View More</a></td>
+                    <td class="border-grey-light border hover:bg-gray-100 p-3 text-center"><a
+                            class="text-teal-600 capitalize font-medium" href=" {{route('log',[ 'date'=>$date,
+                            'user'=>$row['username']
+                            ])}}">View More</a></td>
                 </tr>
                 @endforeach
             </tbody>

@@ -18,7 +18,7 @@
                     <th class="p-3 text-center capitalize">country</th>
                     <th class="p-3 text-center capitalize">city</th>
                     <th class="p-3 text-center capitalize">county</th>
-                    <th class="p-3 text-center capitalize">name place</th>
+                    <th class="p-3 text-center capitalize">near place</th>
                     <th class="p-3 text-center capitalize">latitude</th>
                     <th class="p-3 text-center capitalize">longitude</th>
                     <th class="p-3 text-center capitalize">Login At</th>
@@ -35,7 +35,7 @@
                     {{-- <td class="border-grey-light border hover:bg-gray-100 p-3 text-center"> {{$log->id}}</td> --}}
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center">
                         <div class="w-full">
-                            <a href="{{route('log',[
+                            <a class="text-teal-600  font-medium" href="{{route('log',[
                                 'date'=>$date,
                                  'user'=>$log->user->username
                              ])}}">{{$log->user->username}}</a>

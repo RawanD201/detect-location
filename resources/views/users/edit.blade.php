@@ -58,15 +58,17 @@
                                         class="col-span-3 outline-none rounded p-1 text-base text-center text-black "
                                         name="status" class="form-control @error('status') is-invalid @enderror"
                                         id="status">
-                                        <option value="1">Active</option>
-                                        <option value="0">Inactive</option>
+                                        <option @selected($user->status == '1') value="1">Active</option>
+                                        <option @selected($user->status == '0') value="0">Inactive</option>
                                     </select>
                                     <span class="w-full text-white ">ڕۆڵ</span>
                                     <select
                                         class="col-span-3 outline-none rounded p-1 text-base text-center text-black "
                                         name="role" class="form-control @error('role') is-invalid @enderror" id="role">
-                                        <option value="admin">Admin</option>
-                                        <option value="user">User</option>
+                                        <option @selected($user->role->value === 'admin') value="admin">Admin
+                                        </option>
+                                        <option @selected($user->role->value === 'user') value="user">User
+                                        </option>
                                     </select>
                             </div>
                         </div>
