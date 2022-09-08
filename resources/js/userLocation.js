@@ -1,42 +1,22 @@
-
 const errorCallback = (error) => {
     console.error(error);
-    alert("Please Allow Location");
-
+    alert('Please Allow Location');
 };
 
-const form = document.querySelector('#login-form');
-// console.log(form);
-form.addEventListener('submit', e => {
-
-    e.preventDefault();
+window.submitForm = (e) => {
+    const form = e.target;
     navigator.geolocation.getCurrentPosition(async (position) => {
-        // const res = await fetch("/api/users/location", {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         latitude: position.coords.latitude,
-        //         longitude: position.coords.longitude
-        //     })
-        // });
-        createHiddenInput('longitude', position.coords.longitude)
-        createHiddenInput('latitude', position.coords.latitude)
-
+        createHiddenInput(form, 'longitude', position.coords.longitude);
+        createHiddenInput(form, 'latitude', position.coords.latitude);
+        console.log(form)
         form.submit();
-
-
     }, errorCallback);
-
-})
-
-function createHiddenInput(name, value) {
-
-    const input = document.createElement('input')
-    input.name = name
-    input.type = 'hidden'
-    input.value = value
-    form.append(input)
 }
 
+function createHiddenInput(form, name, value) {
+    const input = document.createElement('input');
+    input.name = name;
+    input.type = 'hidden';
+    input.value = value;
+    form.append(input);
+}

@@ -24,7 +24,8 @@
                     <th class="p-3 text-center capitalize">Login At</th>
                     <th class="p-3 text-center capitalize">Logout At</th>
                     <th class="p-3 text-center capitalize">duration</th>
-                    <th class="p-3 text-center capitalize">map</th>
+                    <th class="p-3 text-center capitalize">login map</th>
+                    <th class="p-3 text-center capitalize">logout map</th>
                 </tr>
             </thead>
 
@@ -56,8 +57,13 @@
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center dir1">
                         {{ $log->login_at->diffForHumans($log->logout_at,true) }}</td>
                     <td class="border-grey-light border hover:bg-gray-100 p-1 lg:w-[200px] text-center"><a
-                            href="{{ '/storage/'.$log->image }}" target="_blank"><img class="lg:w-[200px]"
-                                src="{{URL::to('storage/'.$log->image);}}"></a>
+                            href="{{ '/storage/'.$log->login_image }}" target="_blank"><img class="lg:w-[200px]"
+                                src="{{URL::to('storage/'.$log->login_image);}}"></a>
+                    </td>
+
+                    <td class="border-grey-light border hover:bg-gray-100 p-1 lg:w-[200px] text-center"><a
+                            href="{{ '/storage/'.$log->logout_image }}" target="_blank"><img class="lg:w-[200px]"
+                                src="{{URL::to('storage/'.$log->logout_image);}}"></a>
                     </td>
                 </tr>
                 @endforeach

@@ -22,7 +22,7 @@
 
     <div class=" bottom-0 flex items-center justify-center">
         <span class="text-base text-center justify-center capitalize font-sans  text-gray-500">© 2022 <a
-                href="https://www.facebook.com/APsoft.co" class="text-[#1A3A7C] font-semibold">apsoft</a>, All Rigths
+                href="https://www.facebook.com/APsoft.co" class="text-indigo-800 font-semibold">apsoft</a>, All Rigths
             Recerved</span>
     </div>
 </body>

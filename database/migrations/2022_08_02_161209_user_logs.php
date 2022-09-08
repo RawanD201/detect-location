@@ -23,7 +23,8 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
-            $table->string('image');
+            $table->string('login_image');
+            $table->string('logout_image')->nullable();
             $table->timestamp('login_at')->nullable();
             $table->timestamp('logout_at')->nullable();
             $table->timestamps();

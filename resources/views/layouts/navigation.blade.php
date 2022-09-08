@@ -54,16 +54,17 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
+                        <form method="POST" onsubmit="event.preventDefault();submitForm(event);"
+                            action="{{ route('logout') }}">
                             @csrf
                             <x-dropdown-link :href="route('users.updatePassword')">
                                 {{ __('Change Password') }}
                             </x-dropdown-link>
 
-                            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                                this.closest('form').submit();">
+                            <button
+                                class="block text-left w-full px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
                                 {{ __('Log Out') }}
-                            </x-dropdown-link>
+                            </button>
 
                         </form>
                     </x-slot>
@@ -93,11 +94,15 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
 
-
             @can('view', \App\Models\User::class)
             <x-responsive-nav-link :href="route('log')" :active="request()->routeIs('log')">
                 {{ __('Logs') }}
             </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('report')" :active="request()->routeIs('report')">
+                {{ __('Reports') }}
+            </x-responsive-nav-link>
+
             <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
                 {{ __('Users') }}
             </x-responsive-nav-link>
@@ -119,13 +124,13 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
+                <form method="POST" onsubmit="event.preventDefault();submitForm(event);" action="{{ route('logout') }}">
                     @csrf
-
-                    <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
-                                        this.closest('form').submit();">
+                    <button class="block w-full text-left pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800
+                    hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300
+                    transition duration-150 ease-in-out">
                         {{ __('Log Out') }}
-                    </x-responsive-nav-link>
+                    </button>
                 </form>
             </div>
         </div>
