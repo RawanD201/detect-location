@@ -81,7 +81,7 @@ class AuthenticatedSessionController extends Controller
 
         $key = config('services.map');
         $lat = "{$request->longitude},{$request->latitude}";
-        $url = "https://maps.geoapify.com/v1/staticmap?style=osm-carto&zoom=14.7625&marker=lonlat:{$lat};type:material;color:%23ff3421;icontype:awesome&width=1920&height=1080&center=lonlat:{$lat}&apiKey={$key}";
+        $url = "https://maps.geoapify.com/v1/staticmap?style=osm-carto&zoom=15&marker=lonlat:{$lat};type:material;color:%23ff3421;icontype:awesome&width=2140&height=1080&center=lonlat:{$lat}&apiKey={$key}";
         $imageContent = file_get_contents($url);
 
 
