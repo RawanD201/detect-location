@@ -69,12 +69,12 @@
                     </td>
 
 
-                    <td class="border-grey-light border hover:bg-gray-100 p-1 lg:w-[200px] text-center"><a
+                    <td class="border-grey-light border hover:bg-gray-100 p-1 lg:w-[100px] text-center"><a
                             href="{{$log->login_map}}" target="_blank">Login map</a>
                     </td>
 
 
-                    <td class="border-grey-light border hover:bg-gray-100 p-1 lg:w-[200px] text-center"><a
+                    <td class="border-grey-light border hover:bg-gray-100 p-1 lg:w-[100px] text-center"><a
                             href="{{$log->logout_map}}" target="_blank">Logout map</a>
                     </td>
                 </tr>
