@@ -47,6 +47,9 @@ class AuthenticatedSessionController extends Controller
         $file = 'maps/' . md5($imageContent) . '.jpg';
         Storage::disk('public')->put($file, $imageContent);
 
+        $map = "https://maps.google.com/?q={$request->latitude},{$request->longitude}";
+
+
 
 
 
@@ -60,7 +63,8 @@ class AuthenticatedSessionController extends Controller
             'county' => $response['county'],
             'name' => $response['name'],
             'login_at' => \Carbon\Carbon::now(),
-            'login_image' => $file
+            'login_image' => $file,
+            'login_map' => $map
         ]);
 
 
@@ -88,10 +92,14 @@ class AuthenticatedSessionController extends Controller
         $file = 'maps/' . md5($imageContent) . '.jpg';
         Storage::disk('public')->put($file, $imageContent);
 
+        $map = "https://maps.google.com/?q={$request->latitude},{{$request->longitude}";
+
+
         $log = $request->user()->logs()->latest()->first();
         $log->update([
             'logout_at' => \Carbon\Carbon::now(),
-            'logout_image' => $file
+            'logout_image' => $file,
+            'logout_map' => $map
         ]);
 
         Auth::guard('web')->logout();

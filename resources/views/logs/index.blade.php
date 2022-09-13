@@ -26,6 +26,8 @@
                     <th class="p-3 text-center capitalize">duration</th>
                     <th class="p-3 text-center capitalize">login map</th>
                     <th class="p-3 text-center capitalize">logout map</th>
+                    <th class="p-3 text-center capitalize">google map</th>
+                    <th class="p-3 text-center capitalize">google map</th>
                 </tr>
             </thead>
 
@@ -64,6 +66,16 @@
                     <td class="border-grey-light border hover:bg-gray-100 p-1 lg:w-[200px] text-center"><a
                             href="{{ '/storage/'.$log->logout_image }}" target="_blank"><img class="lg:w-[200px]"
                                 src="{{URL::to('storage/'.$log->logout_image);}}"></a>
+                    </td>
+
+
+                    <td class="border-grey-light border hover:bg-gray-100 p-1 lg:w-[200px] text-center"><a
+                            href="{{$log->login_map}}" target="_blank">Login map</a>
+                    </td>
+
+
+                    <td class="border-grey-light border hover:bg-gray-100 p-1 lg:w-[200px] text-center"><a
+                            href="{{$log->logout_map}}" target="_blank">Logout map</a>
                     </td>
                 </tr>
                 @endforeach

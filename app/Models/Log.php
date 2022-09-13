@@ -22,6 +22,8 @@ class Log extends Model
         'logout_image',
         'latitude',
         'longitude',
+        'login_map',
+        'logout_map',
         'login_at',
         'logout_at',
     ];
