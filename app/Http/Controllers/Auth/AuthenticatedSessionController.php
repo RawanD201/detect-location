@@ -92,7 +92,7 @@ class AuthenticatedSessionController extends Controller
         $file = 'maps/' . md5($imageContent) . '.jpg';
         Storage::disk('public')->put($file, $imageContent);
 
-        $map = "https://maps.google.com/?q={$request->latitude},{{$request->longitude}";
+        $map = "https://maps.google.com/?q={$request->latitude},{$request->longitude}";
 
 
         $log = $request->user()->logs()->latest()->first();
