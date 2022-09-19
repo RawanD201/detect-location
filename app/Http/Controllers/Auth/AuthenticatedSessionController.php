@@ -64,7 +64,8 @@ class AuthenticatedSessionController extends Controller
             'name' => $response['name'],
             'login_at' => \Carbon\Carbon::now(),
             'login_image' => $file,
-            'login_map' => $map
+            'login_map' => $map,
+            'visit_place' => $request->place
         ]);
 
 

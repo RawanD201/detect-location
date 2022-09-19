@@ -31,7 +31,14 @@
                     autocomplete="current-password" />
             </div>
 
-            <!-- Remember Me -->
+            <!-- name of place -->
+            <div class="mt-4">
+                <x-label for="place" :value="__('Visit Place')" />
+
+                <x-input id="place" class="block mt-1 w-full" type="text" name="place" required
+                    placeholder="Name of visit place" />
+            </div>
+
 
 
             <div class="flex items-center justify-end mt-4">

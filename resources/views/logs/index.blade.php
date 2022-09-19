@@ -15,12 +15,13 @@
                     {{-- <th class="p-3 text-center">ID</th> --}}
                     <th class="p-3 text-center capitalize">Name</th>
                     <th class="p-3 text-center capitalize">Ip Address</th>
+                    <th class="p-3 text-center capitalize">visit place</th>
                     <th class="p-3 text-center capitalize">country</th>
                     <th class="p-3 text-center capitalize">city</th>
                     <th class="p-3 text-center capitalize">county</th>
-                    <th class="p-3 text-center capitalize">near place</th>
-                    <th class="p-3 text-center capitalize">latitude</th>
-                    <th class="p-3 text-center capitalize">longitude</th>
+                    <th class="p-3 text-center capitalize">nearest place</th>
+                    <th class="p-3 text-center capitalize">latitude , longitude</th>
+                    {{-- <th class="p-3 text-center capitalize"></th> --}}
                     <th class="p-3 text-center capitalize">Login At</th>
                     <th class="p-3 text-center capitalize">Logout At</th>
                     <th class="p-3 text-center capitalize">duration</th>
@@ -38,7 +39,7 @@
                     {{-- <td class="border-grey-light border hover:bg-gray-100 p-3 text-center"> {{$log->id}}</td> --}}
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center">
                         <div class="w-full">
-                            <a class="text-teal-600  font-medium" href="{{route('log',[
+                            <a class="text-teal-600 font-medium" href="{{route('log',[
                                 'date'=>$date,
                                  'user'=>$log->user->username
                              ])}}">{{$log->user->username}}</a>
@@ -46,14 +47,17 @@
 
                     </td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center"> {{$log->ip}}</td>
+                    <td class="border-grey-light border hover:bg-gray-100 p-1 lg:w-[100px] text-center">
+                        {{$log->visit_place}}
+                    </td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center"> {{$log->country}}</td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center"> {{$log->city}}</td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center"> {{$log->county}}</td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center"> {{$log->name}}</td>
-                    <td class="border-grey-light border hover:bg-gray-100 p-3 text-center">
-                        {{$log->longitude}}</td>
-                    <td class="border-grey-light border hover:bg-gray-100 p-3 text-center ip_address ">
-                        {{$log->latitude}}</td>
+                    <td class="border-grey-light border hover:bg-gray-100 p-2 text-center">
+                        Long: {{$log->longitude}} <br> Lat: {{$log->latitude}}</td>
+                    {{-- <td class="border-grey-light border hover:bg-gray-100 p-3 text-center ip_address ">
+                    </td> --}}
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center ">{{$log->login_at}}</td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center">{{$log->logout_at}}</td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center dir1">
@@ -70,13 +74,14 @@
 
 
                     <td class="border-grey-light border hover:bg-gray-100 p-1 lg:w-[100px] text-center"><a
-                            href="{{$log->login_map}}" target="_blank">Login map</a>
+                            href="{{$log->login_map}}" target="_blank" class="text-teal-600">Login map</a>
                     </td>
 
 
                     <td class="border-grey-light border hover:bg-gray-100 p-1 lg:w-[100px] text-center"><a
-                            href="{{$log->logout_map}}" target="_blank">Logout map</a>
+                            href="{{$log->logout_map}}" target="_blank" class="text-teal-600">Logout map</a>
                     </td>
+
                 </tr>
                 @endforeach
             </tbody>

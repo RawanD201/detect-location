@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::table('user_logs', function (Blueprint $table) {
             $table->string('login_map')->nullable()->after('longitude');
             $table->string('logout_map')->nullable()->after('login_map');
+            $table->string('visit_place')->nullable();
         });
     }
 
