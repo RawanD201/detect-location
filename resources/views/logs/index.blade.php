@@ -97,6 +97,9 @@
             </tbody>
         </table>
     </div>
+    <div class="px-4">
+        {{ $logs->links() }}
+    </div>
 </body>
 
 <script>

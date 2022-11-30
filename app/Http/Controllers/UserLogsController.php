@@ -20,7 +20,7 @@ class UserLogsController extends Controller
             return back();
         }
 
-        $users = User::all();
+        $users = User::orderBy('name')->get();
         $startDate = $request->startDate ?: now()->toDateString();
         $endDate = $request->endDate ?: now()->toDateString();
         $user = $request->usr ?: null;
@@ -33,8 +33,7 @@ class UserLogsController extends Controller
             ->whereBetween(
                 DB::raw('DATE(created_at)'),
                 [$startDate, $endDate]
-            )->get();
-        // dd($logs);
+            )->paginate(9);
         return view('logs.index', compact('logs', 'startDate', 'endDate', 'users'));
     }
 }
