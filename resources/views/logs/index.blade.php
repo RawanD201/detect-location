@@ -4,7 +4,17 @@
 <body class="flex items-center justify-center ">
 
     <form class="flex items-center px-4 pt-2 gap-2 dir" action="{{route('log')}}">
-        <input class="rounded  border-teal-500  w-1/2 lg:w-1/6 text-center" type="date" value="{{$date}}" name="date">
+        <input class="rounded  border-teal-500  w-1/2 lg:w-1/6 text-center" type="date" value="{{$startDate}}"
+            name="startDate">
+        <input class="rounded  border-teal-500  w-1/2 lg:w-1/6 text-center" type="date" value="{{$endDate}}"
+            name="endDate">
+
+        <select class="rounded border-teal-500  w-1/2 lg:w-1/6 text-center text-black" name="usr"
+            class="form-control @error('status') is-invalid @enderror" id="status">
+            @foreach ($users as $user )
+            <option value="{{$user->username}}">{{$user->username}}</option>
+            @endforeach
+        </select>
         <button class="rounded bg-teal-400 p-[9px]"><i class="fa-solid fa-magnifying-glass text-white"></i></button>
     </form>
     <div class="px-4 dir">
@@ -40,7 +50,7 @@
                     <td class="border-grey-light border hover:bg-gray-100 p-3 text-center">
                         <div class="w-full">
                             <a class="text-teal-600 font-medium" href="{{route('log',[
-                                'date'=>$date,
+                                'date'=>$startDate,
                                  'user'=>$log->user->username
                              ])}}">{{$log->user->username}}</a>
                         </div>

@@ -43,6 +43,6 @@ class ReportLogsController extends Controller
             $row['durations'] =  $durations;
             $rows[] = $row;
         });
-        return view('report.index', compact('rows', 'date'));
+        return view('report.index', compact('rows', 'date', 'users'));
     }
 }
