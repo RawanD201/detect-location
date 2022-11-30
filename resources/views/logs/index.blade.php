@@ -3,19 +3,25 @@
 
 <body class="flex items-center justify-center ">
 
-    <form class="flex items-center px-4 pt-2 gap-2 dir" action="{{route('log')}}">
-        <input class="rounded  border-teal-500  w-1/2 lg:w-1/6 text-center" type="date" value="{{$startDate}}"
-            name="startDate">
-        <input class="rounded  border-teal-500  w-1/2 lg:w-1/6 text-center" type="date" value="{{$endDate}}"
-            name="endDate">
-
-        <select class="rounded border-teal-500  w-1/2 lg:w-1/6 text-center text-black" name="usr"
+    <form class="flex flex-col lg:flex-row items-center px-4 pt-2 gap-2 dir" action="{{route('log')}}">
+        <div class="flex gap-2 w-full lg:w-1/5 ">
+            <span class="bg-teal-500 text-white text-base rounded p-2 w-1/4 text-center">start
+                at</span>
+            <input class="rounded  border-teal-500 w-full text-center" type="date" value="{{$startDate}}"
+                name="startDate">
+        </div>
+        <div class="flex gap-2 w-full lg:w-1/5">
+            <span class="bg-teal-500 text-white text-base rounded p-2 w-1/4 text-center">end at</span>
+            <input class="rounded  border-teal-500 w-full text-center" type="date" value="{{$endDate}}" name="endDate">
+        </div>
+        <select class="rounded border-teal-500  w-full lg:w-1/5 text-center text-black" name="usr"
             class="form-control @error('status') is-invalid @enderror" id="status">
             @foreach ($users as $user )
             <option value="{{$user->username}}">{{$user->username}}</option>
             @endforeach
         </select>
-        <button class="rounded bg-teal-400 p-[9px]"><i class="fa-solid fa-magnifying-glass text-white"></i></button>
+        <button class="rounded bg-teal-400 p-[9px] w-full lg:w-10"><i
+                class="fa-solid fa-magnifying-glass text-white"></i></button>
     </form>
     <div class="px-4 dir">
         <table class="w-full flex flex-col flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5 dir">
